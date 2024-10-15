@@ -1,6 +1,4 @@
-package LeetCodeDS;
-
-import java.util.Arrays;
+package LeetCodeDS.Strings_TwoPointer;
 
 public class MoveAllZeroes {
     public static void main(String [] args){

@@ -1,4 +1,4 @@
-package LeetCodeDS;
+package LeetCodeDS.Strings_TwoPointer;
 
 public class MaxCOsecutiveOnes {
     public static void main(String []args){

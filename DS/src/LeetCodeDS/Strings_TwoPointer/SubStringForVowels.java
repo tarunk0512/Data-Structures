@@ -1,4 +1,4 @@
-package LeetCodeDS;
+package LeetCodeDS.Strings_TwoPointer;
 
 import java.util.Set;
 

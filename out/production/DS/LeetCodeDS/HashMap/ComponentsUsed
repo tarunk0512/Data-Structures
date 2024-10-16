@@ -1,0 +1,21 @@
+1>  map.getOrDefault(num, 0):
+    This method attempts to retrieve the value associated with the key num from the map.
+    If num is not already a key in the map, it returns the default value 0.
+2>  map.getOrDefault(num, 0) + 1:
+    This adds 1 to the value retrieved (or the default value 0 if num is not present).
+3>  map.put(num, ...):
+    This updates the map by setting the key num to the new value calculated in the previous step.
+    In summary, this line of code increments the count of num in the map. If num is not already in the map, it initializes the count to 1.
+
+
+
+1>  occurrences.add(count):
+    This method attempts to add the count to the occurrences collection.
+    occurrences is usually a Set (e.g., HashSet), which does not allow duplicate elements.
+2>  !occurrences.add(count):
+    The add method returns true if the count was successfully added to the set (i.e., it was not already present).
+    It returns false if the count was already in the set.
+    The ! operator negates the result, so !occurrences.add(count) is true if count was already in the set.
+3>  if (!occurrences.add(count)):
+    This condition checks if the count was not added to the set, meaning it was already present.
+    If the condition is true, the code inside the if block will execute, handling the case where a duplicate count is found.

@@ -13,7 +13,7 @@ public class StreamSum {
 
         int totalPrice = p.stream()
                 .map(n -> n.price)
-                .reduce(5, Integer::sum);
+                .reduce(0, Integer::sum);
         System.out.println(totalPrice);
 
         long count = p.stream()

@@ -17,7 +17,7 @@ public class Q3_SquareNumber {
         double avg = list.stream()
                         .map(n -> n*n)
                                 .filter(n -> n>15)
-                                        .mapToDouble(n ->n)
+                                        .mapToInt(n ->n)
                                                 .average().getAsDouble();
 
         System.out.println("Sqaure is : "+square);

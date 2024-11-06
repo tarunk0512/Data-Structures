@@ -1,0 +1,10 @@
+The difference between Collectors.toList() and Stream.toList() in Java lies in their usage, mutability, and the version of Java they were introduced in.
+
+
+1> Collectors.toList()  : Mutable ->  The list returned by Collectors.toList() is typically mutable, meaning you can modify the list (add, remove, or update elements).
+
+2> Stream.toList() :  The list returned by Stream.toList() is unmodifiable, meaning you cannot modify the list after it is created (attempting to do so will throw an UnsupportedOperationException).
+Exception in thread "main" java.lang.UnsupportedOperationException
+	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142)
+	at java.base/java.util.ImmutableCollections$AbstractImmutableCollection.add(ImmutableCollections.java:147)
+	at Streams.InterviewQuestions.Q3_SquareNumber.main(Q3_SquareNumber.java:14)

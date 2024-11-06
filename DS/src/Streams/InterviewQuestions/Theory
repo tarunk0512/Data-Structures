@@ -8,3 +8,33 @@ Exception in thread "main" java.lang.UnsupportedOperationException
 	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142)
 	at java.base/java.util.ImmutableCollections$AbstractImmutableCollection.add(ImmutableCollections.java:147)
 	at Streams.InterviewQuestions.Q3_SquareNumber.main(Q3_SquareNumber.java:14)
+
+
+####################################################################################################
+
+Understanding  --->>>    .map(String::valueOf)
+So basically .map(String :: valueOf) translates into --> .map(n -> String.valueof(n))
+It means    if we apply  .map(String :: valueOf) on -->>
+List<Integer> list = Arrays.asList(2,22,45,34,231,432,62,28,20);
+
+then we'll get String values of elements in the list
+
+Similarly it works for .map( n -> Integer.valueOf(n)); : for converting String list to Integer list.
+
+
+***
+*** -->> Limitation of Usage of  .map(n -> Integer.valueOf(n))
+String List: When you have a list of String objects, each element is a String.
+The Integer.valueOf(n) method expects a String that represents a valid integer (e.g., “123”).
+ If n is a String that cannot be parsed as an integer (e.g., “abc”),
+ this will throw a NumberFormatException.
+
+
+ Example :   List<String> words = Arrays.asList("one", "two", "three", "four");
+                   List<Integer> numWithTwo = words.stream()
+                            .map(n -> Integer.valueOf(n)) // here it expects values in "n" in form of
+                                                               integer i.e (1,11,2,3,134)
+                             .toList();
+
+
+

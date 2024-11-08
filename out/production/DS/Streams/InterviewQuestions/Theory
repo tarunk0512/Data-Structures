@@ -22,3 +22,19 @@ then we'll get String values of elements in the list
 Similarly it works for .map( n -> Integer.valueOf(n)); : for converting String list to Integer list.
 
 
+***
+*** -->> Limitation of Usage of  .map(n -> Integer.valueOf(n))
+String List: When you have a list of String objects, each element is a String.
+The Integer.valueOf(n) method expects a String that represents a valid integer (e.g., “123”).
+ If n is a String that cannot be parsed as an integer (e.g., “abc”),
+ this will throw a NumberFormatException.
+
+
+ Example :   List<String> words = Arrays.asList("one", "two", "three", "four");
+                   List<Integer> numWithTwo = words.stream()
+                            .map(n -> Integer.valueOf(n)) // here it expects values in "n" in form of
+                                                               integer i.e (1,11,2,3,134)
+                             .toList();
+
+
+

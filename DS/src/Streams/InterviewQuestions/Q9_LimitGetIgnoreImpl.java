@@ -12,7 +12,7 @@ public class Q9_LimitGetIgnoreImpl {
         System.out.println(l1);
         //O/P : [1, 2, 3, 4, 5]
 
-        int sum = list.stream().limit(5).reduce(Integer::sum).get();
+        int sum = list.stream().limit(5).reduce((a,b) -> a+b).get(); // Note : .reduce(Integer :: sum) is same as reduce((a,b) -> a+b)
         System.out.println(sum);
         // O/P : 15
 

@@ -17,6 +17,8 @@ public class MainSingly {
         singlyLinkedList.printList();
         singlyLinkedList.insertAtIndex(2,33);
         singlyLinkedList.printList();
+        singlyLinkedList.deleteFromTheStart();;
+        singlyLinkedList.printList();
 
     }
 }

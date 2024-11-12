@@ -27,17 +27,6 @@ public class SinglyImpl<T> {
         }
 
     }
-
-    public void printList() {
-        var temp = head;
-        while (!Objects.isNull(temp.next)) {
-            System.out.print(temp.data + " -> ");
-            temp = temp.next;
-        }
-
-        System.out.print(temp.data);
-        System.out.println("\n");
-    }
     public void insertAtIndex(int position, T data){
         if(position < 0 || position > getSize()){
             throw new IndexOutOfBoundsException("Position invalid");
@@ -52,6 +41,33 @@ public class SinglyImpl<T> {
         newNode.next = temp.next;
         temp.next=newNode;
     }
+    public void deleteFromTheStart(){
+        if(Objects.isNull(head)) throw new RuntimeException("Underflow condition");
+        Node temp = head;
+        head = temp.next;
+        temp.next = null;
+    }
+    public void deleteFromTheEnd(){
+        if(Objects.isNull(head)) throw new RuntimeException("UnderFlow COndition");
+        var temp = head;
+        while(Objects.nonNull(temp.next.next)){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
+
+    public void printList() {
+        var temp = head;
+        while (!Objects.isNull(temp.next)) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+
+        System.out.print(temp.data);
+        System.out.println("\n");
+    }
+
 
     public int getSize(){
         int count = 0;

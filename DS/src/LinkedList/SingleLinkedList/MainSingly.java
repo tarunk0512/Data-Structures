@@ -26,7 +26,9 @@ public class MainSingly {
         singlyLinkedList.deleteFromTheEnd();
         singlyLinkedList.printList();
         System.out.println("Deleting from a given index");
-        singlyLinkedList.deleteFromTheIndex(3);
+        //singlyLinkedList.deleteFromTheIndex(3);
+        //singlyLinkedList.printList();
+        singlyLinkedList.reverseTheList();
         singlyLinkedList.printList();
 
 

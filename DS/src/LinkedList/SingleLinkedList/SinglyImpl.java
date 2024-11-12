@@ -73,6 +73,24 @@ public class SinglyImpl<T> {
 
     }
 
+    public void reverseTheList(){
+        if(Objects.isNull(head)|| Objects.isNull(head.next)){
+            return ;
+        }
+        var prev = head;
+        var currNode = head.next;
+
+        while(currNode != null){
+            Node nextNode = currNode.next;
+            currNode.next = prev;
+
+            prev = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prev;
+    }
+
 
     public void printList() {
         var temp = head;

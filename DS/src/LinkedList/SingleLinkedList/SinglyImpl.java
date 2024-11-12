@@ -48,12 +48,29 @@ public class SinglyImpl<T> {
         temp.next = null;
     }
     public void deleteFromTheEnd(){
-        if(Objects.isNull(head)) throw new RuntimeException("UnderFlow COndition");
+        if(Objects.isNull(head)) throw new RuntimeException("UnderFlow Condition");
         var temp = head;
         while(Objects.nonNull(temp.next.next)){
             temp = temp.next;
         }
         temp.next = null;
+    }
+
+    public void deleteFromTheIndex(int position){
+        if(position < 0 || position>getSize() || Objects.isNull(head)){
+            throw new RuntimeException("Under flow condition, please check the values");
+        }
+        int i = 0;
+        var temp = head;
+        Node prev = null;
+        while(i != position){
+            prev = temp;
+            temp = temp.next;
+            i++;
+        }
+        prev.next = temp.next;
+        temp.next = null;
+
     }
 
 

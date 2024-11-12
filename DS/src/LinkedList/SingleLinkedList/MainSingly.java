@@ -13,12 +13,22 @@ public class MainSingly {
         //singlyLinkedList.printList();
 
         // Inserting at the END
+        System.out.println("Inserting in the END");
         data.forEach(n -> singlyLinkedList.insertAtEnd(n));
         singlyLinkedList.printList();
+        System.out.println("Inserting at a given index");
         singlyLinkedList.insertAtIndex(2,33);
         singlyLinkedList.printList();
-        singlyLinkedList.deleteFromTheStart();;
+        System.out.println("Deleting from the start");
+        singlyLinkedList.deleteFromTheStart();
         singlyLinkedList.printList();
+        System.out.println("Deleting from the End");
+        singlyLinkedList.deleteFromTheEnd();
+        singlyLinkedList.printList();
+        System.out.println("Deleting from a given index");
+        singlyLinkedList.deleteFromTheIndex(3);
+        singlyLinkedList.printList();
+
 
     }
 }

@@ -1,0 +1,39 @@
+Explanation : List<Integer> data = IntStream.rangeClosed(1, 10).boxed().toList(); step by step:
+
+1>  IntStream.rangeClosed(1, 10):
+    This creates an IntStream that includes all integers from 1 to 10, inclusive.
+    The rangeClosed method generates a stream of numbers starting from the first argument (1)
+    to the second argument (10).
+
+2>  .boxed():
+    The boxed() method converts each int in the IntStream to an Integer object.
+    This is necessary because IntStream is a stream of primitive int values, and we need a
+    stream of Integer objects to create a List<Integer>.
+
+
+Question > what if we remove .boxed() from List<Integer> data = IntStream.rangeClosed(1, 10)
+                                                                    .boxed().toList();
+ If you remove the .boxed() method from the statement List<Integer> data = IntStream.rangeClosed(1, 10).boxed().toList();,
+ the code will not compile. This is because IntStream is a stream of primitive int values,
+  and you cannot directly collect primitive streams into a List of their wrapper class (Integer).
+
+
+
+**Auto-Boxing
+**Auto-Unboxing
+
+In Java, you can add elements of type int to a List<Integer> because of autoboxing. Autoboxing is the automatic conversion that the Java compiler makes between the primitive types (like int) and their corresponding object wrapper classes (like Integer).
+
+Here’s how it works:
+
+Autoboxing:
+When you add a primitive int to a List<Integer>,
+Java automatically converts the int to an Integer object. This process is called autoboxing.
+
+Example :  List<Integer> list = new ArrayList<>();
+                  list.add(1);
+                  list.add(2);
+
+Unboxing:
+Similarly, when you retrieve an Integer from the list and assign it to an int variable,
+Java automatically converts the Integer to an int. This process is called unboxing.

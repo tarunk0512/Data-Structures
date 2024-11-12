@@ -9,7 +9,13 @@ public class MainSingly {
 
         System.out.println("Inserting elements at the beginning");
         SinglyImpl<Integer> singlyLinkedList = new SinglyImpl<>();
-        data.forEach(n -> singlyLinkedList.insertAtStart(n));
+        //data.stream().forEach(n -> singlyLinkedList.insertAtStart(n));
+        //singlyLinkedList.printList();
+
+        // Inserting at the END
+        data.forEach(n -> singlyLinkedList.insertAtEnd(n));
+        singlyLinkedList.printList();
+        singlyLinkedList.insertAtIndex(2,33);
         singlyLinkedList.printList();
 
     }

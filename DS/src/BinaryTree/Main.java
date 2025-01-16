@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.Objects;
+
 public class Main {
     public static void main(String args[]){
         BinarySearchTree tree = new BinarySearchTree();
@@ -9,7 +11,14 @@ public class Main {
         tree.insert(root, 5);
         tree.insert(root, 1);
         tree.insert(root, 7);
-        System.out.println(tree);
+        tree.printLeaves(root);
+
+        int target = 5;
+
+        var found = tree.search(root, target);
+        System.out.println();
+        System.out.println(Objects.isNull(found) ? target + " NOT FOUND !!!" : target + " FOUND !!!");
+
 
     }
 }

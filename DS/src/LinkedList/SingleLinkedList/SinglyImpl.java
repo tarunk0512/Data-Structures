@@ -90,6 +90,19 @@ public class SinglyImpl<T> {
         head.next = null;
         head = prev;
     }
+    public int findMiddle(){
+    if(Objects.isNull(head))
+    {
+        System.out.println("Linked List is empty.");
+    }
+    Node fast = head;
+    Node slow = head;
+    while(fast.next != null){
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return (Integer) slow.data;
+    }
 
 
     public void printList() {
@@ -113,7 +126,4 @@ public class SinglyImpl<T> {
         }
         return count;
     }
-
-
-
 }

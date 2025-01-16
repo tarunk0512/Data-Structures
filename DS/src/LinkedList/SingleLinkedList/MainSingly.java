@@ -30,6 +30,8 @@ public class MainSingly {
         //singlyLinkedList.printList();
         singlyLinkedList.reverseTheList();
         singlyLinkedList.printList();
+        System.out.println(singlyLinkedList.findMiddle());
+
 
 
     }

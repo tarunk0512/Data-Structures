@@ -7,7 +7,21 @@ import java.util.Arrays;
 public class RotateArray {
     public static void main(String [] args){
         int [] ar = {1,2,3,4,5,6,7};
+        int [] arr = {1,2,3,4,5,6,7};
+
         System.out.println("Rotated Array : "+ Arrays.toString(rotateArray(ar,3)));
+        System.out.println("Rotated Array in alternate way : "+ Arrays.toString(rotateArr(arr, 3)));
+    }
+
+    private static int[] rotateArr(int[] ar, int k) {
+        int n = ar.length;
+        k = k%n;
+        int[] rotated = new int[n];
+        for(int i =0; i<n; i++){
+            rotated[(k+i)%n] = ar[i];
+        }
+        System.arraycopy(rotated, 0, ar, 0, n);
+        return ar;
     }
 
     public static int[] rotateArray(int[] ar, int k){

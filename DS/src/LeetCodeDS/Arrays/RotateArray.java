@@ -18,7 +18,7 @@ public class RotateArray {
         reverseAr(ar,k, n-1);
         return ar;
     }
-    public static int[] reverseAr(int[] ar, int start, int end){
+    public static void reverseAr(int[] ar, int start, int end){
         while(start<end){
             int temp = ar[start];
             ar[start] = ar[end];
@@ -26,6 +26,5 @@ public class RotateArray {
             start++;
             end--;
         }
-        return ar;
     }
 }

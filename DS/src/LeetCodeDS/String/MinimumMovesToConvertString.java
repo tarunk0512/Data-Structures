@@ -1,5 +1,12 @@
 package LeetCodeDS.String;
 
+//Input: s = "XXOX"
+//Output: 2
+//Explanation: XXOX -> OOOX -> OOOO
+//We select the first 3 characters in the first move, and convert them to 'O'.
+//Then we select the last 3 characters and convert them so that the final string contains all 'O's.
+
+
 public class MinimumMovesToConvertString {
     public static void main(String[] args){
         String s = "XXOX";

@@ -6,18 +6,20 @@ public class RemoveDupsNotSorted {
     public static void main(String [] args){
         ListNode head = new ListNode();
         ListNode curr = head;
-        int [] ar = {1,1,2,3,4,5,6,3};
+        int [] ar = {1,1,2,2,3,4,5,6,3,8,9,4};
         for(int i =0; i< ar.length; i++){
             curr.next = new ListNode(ar[i]);
             curr = curr.next;
         }
-        //ListNode res = removeDups(head.next);
-        ListNode res2 = removeNode(head, 1);
-        printList(res2);
+        printList(head);
+        System.out.println();
+        ListNode res = removeDups(head);
+        //ListNode res2 = removeNode(head, 2);
+        printList(res);
     }
     public static ListNode removeDups(ListNode head){
         HashMap<Integer, Integer> map = new HashMap<>();
-        ListNode curr = new ListNode(0, head);
+        ListNode curr = head;
         ListNode curr1 = new ListNode(0, head);
         ListNode prev = curr1;
         while(curr != null){
@@ -29,11 +31,9 @@ public class RemoveDupsNotSorted {
                 prev.next = curr1.next;
             }else{
                 prev = curr1;
-                System.out.print(prev.val);
             }
             curr1 = curr1.next;
         }
-        System.out.println(map);
         return head;
     }
 

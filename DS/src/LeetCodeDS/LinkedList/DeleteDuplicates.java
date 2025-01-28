@@ -4,11 +4,13 @@ public class DeleteDuplicates {
     public static void main(String [] args){
         ListNode head = new ListNode();
         ListNode curr = head;
-        int [] ar = {1,1,2,3,4,5,5,6};
+        int [] ar = {1,2,3,3,4,5};
         for(int i = 0; i< ar.length; i ++){
             curr.next = new ListNode(ar[i]);
             curr = curr.next;
         }
+        printList(head.next);
+        System.out.println();
         deleteDuplicates(head);
         printList(head.next);
     }

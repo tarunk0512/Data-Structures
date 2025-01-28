@@ -1,0 +1,7 @@
+Usage of Map.get() and map.getOrDefault(key, 0) :
+
+Using map2.getOrDefault(word, 0) instead of map2.get(word) helps prevent a NullPointerException in case the key does not exist in the map. When you use map2.get(word), it returns null if the key is not found. Attempting to compare null to an integer or performing operations on it can cause a NullPointerException.
+Here's how it works:
+map2.get(word): Returns null if the key word is not in the map, leading to potential NullPointerException.
+map2.getOrDefault(word, 0): Returns 0 if the key word is not in the map, providing a safe default value for comparison or further operations.
+In the context of your code, using map2.getOrDefault(word, 0) ensures that you are always comparing against an integer value, avoiding the NullPointerException.

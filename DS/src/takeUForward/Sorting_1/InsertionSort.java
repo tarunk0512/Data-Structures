@@ -11,10 +11,17 @@ public class InsertionSort {
     }
     public int [] insertion(int [] ar) {
         int n = ar.length;
-        for(int i = 1; i< n ; i++){
+        for(int i = 1; i< n ; i++){ // we start from 1 because we assume that the first element is already sorted
+            // and we will insert the next element at the correct position in the sorted part of the array
+            // so we will traverse the array from left to right and for each element we will
+            // find the correct position in the sorted part of the array and insert it there
+            // so we will start from the second element and go till the last element
             int min = ar[i];
             int j = i-1;
-            while(j>=0 && ar[j] > min){
+            while(j>=0 && ar[j] > min){ // this is the condition to find the correct position of the min element
+                // we will traverse the sorted part of the array from right to left and shift the elements
+                // to the right until we find the correct position for the min element
+                // so we will keep shifting the elements to the right until we find the correct position for the min element
                 ar[j+1] = ar[j];
                 j--;
             }

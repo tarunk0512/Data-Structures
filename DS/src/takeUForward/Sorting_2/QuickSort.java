@@ -20,7 +20,7 @@ public class QuickSort {
             if(ar[j] < pivot){
                 i++; // Increment index of smaller element
                 // Swap ar[i] and ar[j]
-                int temp = ar[j];
+                int temp = ar[i];
                 ar[i] = ar[j];
                 ar[j] = temp;
             }

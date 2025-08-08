@@ -23,7 +23,7 @@ public class InsertionSort {
                 // to the right until we find the correct position for the min element
                 // so we will keep shifting the elements to the right until we find the correct position for the min element
                 ar[j+1] = ar[j];
-                j--;
+                j--; // Important to decrement j here because we are shifting the elements to the right
             }
             ar[j+1] = min; // In insertion sort we have condition : - while(j>=0 && ar[j] > min) which means we are shifting the elements to
             // the right and then placing the min element at the correct position and traversing to the left of array

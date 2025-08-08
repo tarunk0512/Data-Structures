@@ -42,4 +42,4 @@ public class BubbleSort {
 //n: total elements
 //i: number of elements that are already in place at the end (sorted)
 //-1: because you're accessing ar[j + 1], so j must stop at n - 2
-//We don’t need to compare the last i elements, because they’re already sorted after
+//We don’t need to compare the last i elements, because they’re already sorted after i passes.

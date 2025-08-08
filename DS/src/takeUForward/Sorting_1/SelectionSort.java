@@ -13,8 +13,9 @@ public class SelectionSort {
         int n = ar.length;
         for(int i = 0; i<n; i++){
             int min = i; // Assume the first element is the minimum
-            for(int j = i+1; j<n; j++){
-                if(ar[j]<ar[min]){
+            for(int j = i+1; j<n; j++){ // this loop finds the minimum element in the unsorted part of the array
+                // Compare the current element with the minimum element found so far
+                if(ar[j]<ar[min]){ // If the current element is smaller than the minimum element
                     min = j; // Update the index of the minimum element
                 }
             }

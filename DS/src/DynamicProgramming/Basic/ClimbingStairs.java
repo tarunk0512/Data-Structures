@@ -12,8 +12,7 @@ public class ClimbingStairs {
         if(n == 0) return 1;
         if( n< 0) return 0;
 
-        int num = countStairs(n-1) + countStairs(n-2);
-        return num;
+        return countStairs(n-1) + countStairs(n-2);
 
     }
 

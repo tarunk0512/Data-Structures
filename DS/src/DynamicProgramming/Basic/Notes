@@ -1,0 +1,51 @@
+Nice — let’s walk the Jump Game II greedy algorithm over your array step-by-step and show exactly how the variables change and where the jumps happen.
+
+Array (indices):
+[2, 4, 1, 1, 2, 1, 2, 1, 1]
+indices: 0 1 2 3 4 5 6 7 8 (last index = 8)
+
+We run the usual greedy algorithm that keeps:
+
+jumps — number of jumps taken so far
+
+currentEnd — the farthest index reachable with the current number of jumps
+
+farthest — the farthest index we can reach while scanning the current window
+
+Start: jumps = 0, currentEnd = 0, farthest = 0.
+
+Step-by-step (each loop iteration)
+i	nums[i]	i + nums[i]	farthest (before → after)	currentEnd (before → after)	jumps (before → after)	Comment
+0	2	0 + 2 = 2	0 → 2	0 → 2	0 → 1	At i=0 we can reach index 2. Since i == currentEnd (0==0) we finish the current (0th) segment → take the first jump (jumps=1) and set the new currentEnd = farthest (2).
+1	4	1 + 4 = 5	2 → 5	2 → 2	1 → 1	At i=1 we can reach index 5, so update farthest to 5. We’re still within the first jump’s range (i <= currentEnd), so don’t increment jumps yet.
+2	1	2 + 1 = 3	5 → 5	2 → 5	1 → 2	i == currentEnd (2==2) — we finished scanning the first jump-range [0..2]. Increment jumps to 2 and set currentEnd = farthest (5).
+3	1	3 + 1 = 4	5 → 5	5 → 5	2 → 2	Inside second range [3..5], this index can reach 4 which doesn't exceed current farthest (5).
+4	2	4 + 2 = 6	5 → 6	5 → 5	2 → 2	Index 4 extends farthest to 6 (we can potentially go further on next jump).
+5	1	5 + 1 = 6	6 → 6	5 → 6	2 → 3	i == currentEnd (5==5) — we’ve finished scanning the second jump-range [3..5]. Increment jumps to 3 and set currentEnd = farthest (6).
+6	2	6 + 2 = 8	6 → 8	6 → 8	3 → 4	i == currentEnd (6==6) — finished the third jump-range [6..6]. Increment jumps to 4 and set currentEnd = farthest (8). Now currentEnd >= lastIndex (8), so we can stop — we can reach the end.
+
+After the loop (or when we break), jumps = 4. So the algorithm determines the minimum number of jumps = 4.
+
+How to interpret those increments as actual jumps (one valid path)
+The greedy counting doesn’t always return explicit landing indices, but we can pick a valid sequence of indices that achieves the same 4 jumps. One simple valid path is:
+
+0 → 1 → 4 → 6 → 8
+
+Check each step is legal:
+
+From index 0 (nums[0]=2) you can jump to index 1 (distance 1) — allowed.
+
+From index 1 (nums[1]=4) you can jump to index 4 (distance 3) — allowed.
+
+From index 4 (nums[4]=2) you can jump to index 6 (distance 2) — allowed.
+
+From index 6 (nums[6]=2) you can jump to index 8 (distance 2) — allowed.
+
+That path uses 4 jumps, matching the greedy result.
+
+Quick intuition recap
+While scanning indices inside the current window [start..currentEnd], track farthest = the maximum i + nums[i].
+
+When you reach the end of the current window (i == currentEnd), you must take a jump — increment jumps and move the window end to farthest.
+
+Repeat until the window end reaches or passes the last index.

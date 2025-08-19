@@ -1,4 +1,9 @@
 package DynamicProgramming.Knapsack;
+//Question: Can you split the list into two groups that have the same total sum?
+//Example: [1, 5, 11, 5] → YES, because {11} and {1, 5, 5} both sum to 11.
+//Example: [1, 2, 3, 5] → NO, because the total is 11 (odd), so it can’t be split into two equal parts.
+
+//Notes Below the code
 
 public class PartitionEqualSubsetSum {
     public static void main(String [] args){
@@ -34,3 +39,13 @@ public class PartitionEqualSubsetSum {
 
     }
 }
+
+
+//Let total = sum of all numbers.
+//
+//If total is odd, answer is false (you can’t split an odd number into two equal integers).
+//
+//If total is even, then each group must sum to target = total / 2.
+//
+//The problem becomes: Is there a subset of numbers that sums to target?
+//That’s exactly Subset Sum.

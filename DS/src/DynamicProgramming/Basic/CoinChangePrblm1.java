@@ -20,17 +20,28 @@ public class CoinChangePrblm1 {
             dp[i] = amount + 1;
         }
         dp[0] = 0;
+        // Iterate through all amounts from 0 to 'amount'
         for(int i = 0; i <= amount; i++){
+            // Try every coin denomination for current amount 'i'
             for(int coin : coins){
+                // If the coin can be used (i.e., coin value <= current amount)
                 if(coin <= i){
                     dp[i] = Math.min(dp[i], dp[i-coin]+1);
                 }
             }
             System.out.println(dp[i]);
         }
+        // If dp[amount] is still greater than 'amount', it's not possible to form 'amount'
         return dp[amount]>amount ? -1:dp[amount];
+
+
+
 
 
     }
 
 }
+//coin <= i: Ensures the coin's value does not exceed the current amount.
+//dp[i-coin] + 1: Represents using one more coin (the current coin) in addition to the minimum coins needed for the remaining amount (i-coin).
+//Math.min(dp[i], dp[i-coin]+1): Chooses the smaller value between the current minimum (dp[i]) and the new possibility (dp[i-coin]+1).
+//This way, for each amount, you always keep track of the least coins needed by considering all coin denominations.

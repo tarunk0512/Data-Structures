@@ -12,7 +12,6 @@ public class ConsumeArray {
 
         Arrays.stream(strAr).
                 forEach(System.out::println);
-
         Arrays.stream(charAr).
                 forEach(System.out::println);
 

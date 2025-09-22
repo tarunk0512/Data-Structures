@@ -1,6 +1,8 @@
 package Streams.BasicToMedium.Sources;
 
 import java.util.Arrays;
+//✔ names.stream() → creates a stream from a list.
+//✔ Terminal op: forEach prints elements.
 
 public class ConsumeArray {
     public static void main(String [] args){
@@ -17,3 +19,4 @@ public class ConsumeArray {
         Arrays.stream(intAr).forEach(System.out::print);
     }
 }
+

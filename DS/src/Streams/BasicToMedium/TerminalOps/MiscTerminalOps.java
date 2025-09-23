@@ -1,5 +1,6 @@
 package Streams.BasicToMedium.TerminalOps;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,7 +52,7 @@ public class MiscTerminalOps {
 
 
         List<String> strings = List.of("apple", "bananas", "cherry");
-        Optional<String> str = strings.stream().max((s1,s2) -> Integer.compare(s1.length(), s2.length()));
+        Optional<String> str = strings.stream().max(Comparator.comparingInt(String::length));
                 //.max((s1, s2) -> Integer.compare(s1.length(), s2.length()));
         System.out.println("Max string is : "+str.orElse("No value"));
 

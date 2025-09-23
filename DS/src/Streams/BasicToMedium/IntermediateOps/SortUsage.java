@@ -13,6 +13,10 @@ public class SortUsage {
                 .distinct() //removes duplicates
                 .sorted() //ascending order
                 .forEach(System.out::println);
+
+
+        List<String> listStr = List.of("Apple", "Cherry", "Banana", "Duck");
+        listStr.stream().sorted().forEach(System.out::println);
     }
 
 }

@@ -14,6 +14,8 @@ public class StreamSum {
         int totalPrice = p.stream()
                 .map(n -> n.price)
                 .reduce(0, Integer::sum);
+        //(n1,n2) -> n1+n2) this is lambda
+        // and equivalent to Integer::sum
         System.out.println(totalPrice);
 
         long count = p.stream()

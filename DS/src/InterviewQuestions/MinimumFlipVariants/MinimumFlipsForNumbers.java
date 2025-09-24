@@ -3,7 +3,8 @@ package InterviewQuestions.MinimumFlipVariants;
 public class MinimumFlipsForNumbers {
     public static void main(String [] args){
         String s = "1111110000";
-        System.out.println(minFlipsRequired(s));
+        System.out.println(minFlipsRequired(s)); // Output: 4
+        // Explanation: We can flip the last four '0's to '1's to make the string uniform.
 
     }
 

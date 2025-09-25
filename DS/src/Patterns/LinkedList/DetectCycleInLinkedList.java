@@ -7,7 +7,7 @@ public class DetectCycleInLinkedList {
     public static void main(String [] args){
         List<Integer> list = List.of(1,2,3,5,4,6,7,4);
         CreateLinkedList cr = new CreateLinkedList();
-        Node head = cr.createLinkedList(list);
+        Node head = cr.createCycleLinkedList(list, 4);
         System.out.println(checkCycle(head));
     }
 

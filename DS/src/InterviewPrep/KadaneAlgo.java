@@ -16,6 +16,7 @@ public class KadaneAlgo {
     public static void main(String [] args){
         int [] nums = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println(getMaxSum(nums));
+        System.out.println(checkKadaneAlgo(nums));
 
     }
 
@@ -30,5 +31,13 @@ public class KadaneAlgo {
         }
         return max;
 
+    }
+    public static int checkKadaneAlgo(int [] ar){
+        int maxCurrSum = ar[0], maxSum = ar[0];
+        for(int i = 1; i< ar.length; i++){
+            maxCurrSum = Math.max(ar[i], maxCurrSum+ar[i]);
+            maxSum = Math.max(maxCurrSum, maxSum);
+        }
+        return maxSum;
     }
 }

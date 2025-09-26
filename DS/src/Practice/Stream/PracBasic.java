@@ -10,6 +10,22 @@ public class PracBasic {
         //Filter Even Numbers
         List<Integer> nums = List.of(1,2,3,4,5,6,7,8,9,10);
         filterEvenNumbers(nums);
+
+        //Count Strings that starts with 'a'
+        List<String> listString = List.of("apple", "banana", "avocado", "grape", "apricot");
+        countWordsStartingwithA(listString);
+    }
+
+    public static void countWordsStartingwithA(List<String> list){
+        long count = list.stream()
+                .filter(s -> s.startsWith("a"))
+                .count();
+        System.out.println("Count of words starting with 'a': " + count);
+        List<String> words = list.stream()
+                .filter(s1 -> s1.startsWith("a"))
+                .toList(); // .collect(Collectors.toList()) also works
+        System.out.println("And the words are : "+words);
+
     }
 
     public static void filterEvenNumbers(List<Integer> list){

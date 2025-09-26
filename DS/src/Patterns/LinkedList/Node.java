@@ -1,6 +1,6 @@
 package Patterns.LinkedList;
 
-public class Node<T> {
+class Node<T extends Comparable<T>> {
     T val;
     Node next;
     Node(T val){

@@ -14,6 +14,26 @@ public class PracBasic {
         //Count Strings that starts with 'a'
         List<String> listString = List.of("apple", "banana", "avocado", "grape", "apricot");
         countWordsStartingwithA(listString);
+
+        //Sum of Numbers
+        sumOfNums(nums);
+
+        //Maximum Number in the List
+        maxNumberInTheList(nums);
+    }
+
+    public static void maxNumberInTheList(List<Integer> list){
+        long max = list.stream()
+                .max((a,b) -> a.compareTo(b)) // .max((a,b) -> a.compareTo(b)) also works
+                // .max(Integer::compareTo) also works
+                .orElseThrow(); // to handle the case when the list is empty
+        System.out.println("Max number is : "+max);
+    }
+
+    public static void sumOfNums(List<Integer> list){
+        int sum = list.stream()
+                .reduce(0,(a,b)->(a+b));
+        System.out.println("Sum is : "+sum);
     }
 
     public static void countWordsStartingwithA(List<String> list){

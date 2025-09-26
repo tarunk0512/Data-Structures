@@ -1,5 +1,6 @@
 package Patterns.LinkedList;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -11,17 +12,20 @@ public class DetectCycleInLinkedList {
         System.out.println(checkCycle(head));
     }
 
-    public static Boolean checkCycle(Node head){
+    public static HashMap<Integer, Boolean> checkCycle(Node head){
         Node slow = head;
         Node fast = head;
 
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
-            if(slow == fast) return true;
+            if(slow == fast) {
+                HashMap<Integer, Boolean> map = new HashMap<>();
+                map.put((Integer)slow.val, true);
+                return map;
+            }
         }
 
-        return false;
-
-    }
+        return new HashMap<>(){{put(-1, false);}};
+}
 }

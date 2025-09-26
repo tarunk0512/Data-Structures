@@ -3,6 +3,14 @@ package Patterns.LinkedList;
 import java.util.List;
 
 public class CreateLinkedList {
+    public void printLinkedList(Node head){
+        Node curr = head;
+        while(curr != null){
+            System.out.print(curr.val + " -> ");
+            curr = curr.next;
+        }
+        System.out.println("null");
+    }
     public  Node createLinkedList(List<Integer> ar){
         if(ar.isEmpty()) return null;
         Node head = new Node(ar.get(0));

@@ -25,7 +25,6 @@ public class ReverseLinkedList {
             curr = temp;
 
         }
-
         head.next =  null;
         head = prev;
         return head;

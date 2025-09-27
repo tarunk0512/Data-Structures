@@ -24,4 +24,21 @@ public class PracMedium {
                 .ifPresent(System.out::println);
     }
 
+    public static void getLongestWord(List<String> list){
+        list.stream().reduce((a,b) -> a.length() > b.length() ? a : b).ifPresent(System.out::println);
+
+        //.max((a, b) -> a.length() - b.length())
+        //max finds the maximum element using a comparator.
+        //Comparator here subtracts lengths:
+        //If result > 0 → a is longer.
+        //If result < 0 → b is longer.
+        //If result = 0 → equal.
+        //Internally, stream picks the "max" based on this comparison.
+
+        list.stream().max((a,b) -> a.length() - b.length()).ifPresent(System.out::println);
+
+
+    }
+
+
 }

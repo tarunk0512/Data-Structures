@@ -9,6 +9,25 @@ public class ReverseLinkedList {
         CreateLinkedList cr = new CreateLinkedList();
         Node head = cr.createLinkedList(list);
         cr.printLinkedList(head);
+        System.out.println();
+        Node newHead = getReverseLinkedList(head);
+        cr.printLinkedList(newHead);
+    }
+    // 1->2->3->4
+    // 1->2->3->4
+    public static Node getReverseLinkedList(Node head){
+        Node prev = head;
+        Node curr = head.next;
+        while(curr != null){
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
 
+        }
+
+        head.next =  null;
+        head = prev;
+        return head;
     }
 }

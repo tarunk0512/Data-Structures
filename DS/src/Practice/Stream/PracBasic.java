@@ -28,6 +28,10 @@ public class PracBasic {
                 // .max(Integer::compareTo) also works
                 .orElseThrow(); // to handle the case when the list is empty
         System.out.println("Max number is : "+max);
+
+        list.stream()
+                .max((a,b) -> a.compareTo(b))
+                .ifPresent(n -> System.out.println("Max number is : "+n));
     }
 
     public static void sumOfNums(List<Integer> list){
@@ -64,5 +68,7 @@ public class PracBasic {
         list.stream()
                 .map(String::toUpperCase) // .map(n -> n.toUpperCase()) also works
                 .forEach(System.out::println);
+
+        list.stream().map(n -> n.toUpperCase()).forEach(System.out::println);
     }
 }

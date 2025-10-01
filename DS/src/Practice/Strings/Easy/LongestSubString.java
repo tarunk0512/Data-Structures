@@ -1,4 +1,4 @@
-package Practice.Strings;
+package Practice.Strings.Easy;
 
 import java.util.HashSet;
 import java.util.Set;

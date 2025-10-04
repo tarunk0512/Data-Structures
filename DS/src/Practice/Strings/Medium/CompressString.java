@@ -7,8 +7,10 @@ public class CompressString {
     public static void main(String [] args){
         String s = "aabbaacc";
         System.out.println(compressString(s));
-        String s2  = "aabbaacc";
+        String s2  = "aabbaaccdd";
         System.out.println(compressString2(s2));
+        String s1 = "aaabbccdd";
+        System.out.println(getCompressedString(s1));
     }
    // String Compression (Run-Length Encoding)
     //Input: "aaabbccc" → Output: "a3b2c3"
@@ -44,6 +46,25 @@ public class CompressString {
         }
         return sb.toString();
     }
+
+    //Compress String
+//Input  : aaabbccdd
+//Output : a3b2c2d2
+
+    public static String getCompressedString(String s){
+        int count = 1;
+        StringBuilder s1 = new StringBuilder();
+        for(int i = 1; i <= s.length(); i++){
+            if(s.length() > i && s.charAt(i) == s.charAt(i-1)){
+                count++;
+            }else{
+                s1.append(s.charAt(i-1)).append(count);
+                count = 1;
+            }
+        }
+        return s1.toString();
+    }
+
 
 
 }

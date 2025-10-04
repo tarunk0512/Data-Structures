@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class SubArraySum {
     public static void main(String [] args){
-        int [] ar = {1,4,6,7,0};
+        int [] ar = {2,6,1,4,7,0};
         System.out.println(subArraySum(ar));
         System.out.println(subArraySumUsingHashMap(ar));
 

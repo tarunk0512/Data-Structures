@@ -13,8 +13,8 @@ public class LongestSubStringWithKDistinct {
         int k = 2;
         System.out.println(getSubString(s, k));
         String s1 = "advrfaavacb";
-        int k1 = 3;
-        System.out.println(getSubString2(s1, k1));
+        int k1 = 4;
+        System.out.println(getSubStringWithKDistinct(s1, k1));
     }
 
     public static int getSubString(String s, int k){
@@ -64,4 +64,35 @@ public class LongestSubStringWithKDistinct {
         }
         return max;
     }
+
+    //Longest Substring with At Most K Distinct Characters
+
+//Problem:
+//Find the length of the longest substring that contains at most K distinct characters.
+
+//Example:
+//Input: "eceba", k = 2 → Output: 3 ("ece")
+
+    public static int getSubStringWithKDistinct(String s, int k){
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        while(right < s.length()){
+            char c = s.charAt(right);
+            map.put(c, map.getOrDefault(c, 0)+1);
+            while(map.size() > k){
+                map.put(s.charAt(left), map.get(s.charAt(left))-1);
+                if(map.get(s.charAt(left)) == 0){
+                    map.remove(s.charAt(left));
+                }
+                left++;
+            }
+            max = Math.max(max, right-left+1);
+            right++;
+        }
+        return max;
+    }
+
+
 }

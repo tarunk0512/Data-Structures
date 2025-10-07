@@ -37,6 +37,23 @@ public class ReverseLinkedList {
     return head;
 
     }
+    // Reverse a linkedList
+
+    public static Node getReversedLinkedList2(Node head){
+        Node prev = head;
+        Node curr = prev.next;
+
+        while(curr != null){
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        head.next  = null;
+        head = prev;
+
+        return head;
+    }
 
 
     public static Node getReveredAtIndex(Node head, int index){

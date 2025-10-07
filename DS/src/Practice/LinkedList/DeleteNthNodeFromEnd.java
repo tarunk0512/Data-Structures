@@ -13,6 +13,10 @@ public class DeleteNthNodeFromEnd {
         head2 = removeNthNodeEdgeCases(head2, 7);
         System.out.println();
         cr.printLinkedList(head2);
+        Node head3 = cr.createLinkedList(java.util.List.of(1,2,3,4,5));
+        head3 = removeNthNodeFromEnd2(head3, 1);
+        System.out.println();
+        cr.printLinkedList(head3);
     }
     // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
 
@@ -68,7 +72,34 @@ public class DeleteNthNodeFromEnd {
         return dummy.next;
 
     }
+    // Remove Nth Node fromEnd of A linked List
+// 1 -> 2 -> 3 -> 4 -> 5
+    // -1 -> 1 -> 2 -> 3 -> 4 -> 5
+    public static Node removeNthNodeFromEnd2(Node head, int n){
+        Node dummy = new Node(-1);
+        dummy.next = head;
+        Node slow = dummy;
+        Node fast = dummy;
 
+        if(head == null) return null;
+
+        for(int i = 0; i <= n; i++){
+            if(fast == null){
+                return null;
+            }
+            fast = fast.next;
+        }
+
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next.next;
+        return dummy.next;
+
+
+    }
 
 
 

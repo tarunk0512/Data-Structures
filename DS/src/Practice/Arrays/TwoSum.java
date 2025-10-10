@@ -2,6 +2,8 @@ package Practice.Arrays;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TwoSum {
     //Two Sum
@@ -10,6 +12,7 @@ public class TwoSum {
         int target = 14;
         System.out.println(getTwoSum(ar,target));
         System.out.println(Arrays.toString((getTwoSumUsingHashMap(ar, target))));
+        System.out.println(twoSumUsingSet(ar, target));
     }
 
     public static Boolean getTwoSum(int [] ar, int target){
@@ -40,6 +43,23 @@ public class TwoSum {
         }
         return new int [] {-1,-1};
     }
+    // Two Sum using HashSet
+
+    public static boolean twoSumUsingSet(int [] ar, int target){
+        Set<Integer> set = new HashSet<>();
+        int complement = 0;
+        for(int i = 0; i < ar.length; i++){
+            complement = target - ar[i];
+            if(set.contains(complement)){
+                return true;
+            }
+            set.add(ar[i]);
+
+        }
+        return false;
+    }
+
+
 
 
 

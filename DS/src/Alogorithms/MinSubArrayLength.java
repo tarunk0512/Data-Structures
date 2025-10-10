@@ -7,6 +7,7 @@ public class MinSubArrayLength {
         int [] ar = {1,2,4,2,3,5,3};
         int s = 9;
         System.out.println(minSubAr(ar,s));
+        System.out.println(getMinimumSubArraySum(ar,s));
     }
     public static int minSubAr(int[] ar, int s){
         int n = ar.length;
@@ -24,4 +25,24 @@ public class MinSubArrayLength {
         return minLength == Integer.MAX_VALUE ? 0 : minLength;
 
     }
+
+    // Min SubArray Sum
+
+    public static int getMinimumSubArraySum(int [] ar, int s){
+        int start = 0;
+        int minLen = Integer.MAX_VALUE;
+        int curr = 0;
+        for(int i = 0 ; i < ar.length; i++){
+            curr += ar[i];
+            while(curr >= s){
+                minLen = Math.min(minLen, i -start+1);
+                curr = curr - ar[start];
+                start++;
+            }
+
+        }
+        return minLen == Integer.MAX_VALUE ? 0 : minLen;
+
+    }
+
 }
